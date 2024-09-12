@@ -1,6 +1,8 @@
 package programming;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Predicate;
 
 public class FP01Functional {
 	
@@ -24,8 +26,20 @@ public class FP01Functional {
 //		printOddNumberCubes(List.of(12,9,13,4,6,2,4,12,15));
 		
 		// Exercise 6
-		printCountOfChars(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
+//		printCountOfChars(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
 		
+		
+		List<String> fruits = List.of("apple", "banana", "mango");
+		
+		Predicate<? super String> predicate = fruit -> fruit.contains("a");
+		Optional<String> optional = fruits.stream().filter(predicate).findFirst();	
+		System.out.println(optional);
+		System.out.println(optional.isEmpty());
+		System.out.println(optional.isPresent());
+		System.out.println(optional.get());
+		
+		Optional<String> fruit = Optional.of("banana");
+		System.out.println(fruit);
 	
 	}
 
