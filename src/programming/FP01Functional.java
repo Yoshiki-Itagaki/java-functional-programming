@@ -10,13 +10,23 @@ public class FP01Functional {
 //		printEvenNumbersInListFunctional(List.of(12,9,13,4,6,2,4,12,15));
 		
 		// Exercise 1
-		printOddNumbersInListFunctional(List.of(12,9,13,4,6,2,4,12,15));
+//		printOddNumbersInListFunctional(List.of(12,9,13,4,6,2,4,12,15));
 		// Exercise 2
-		printAllCourses(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
+//		printAllCourses(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
 		// Exercise 3
-		printCoursesWithSpring(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
+//		printCoursesWithSpring(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
 		// Exercise 4
-		printCourseswithMoreThan4Chars(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
+//		printCourseswithMoreThan4Chars(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
+		
+//		printSquare(List.of(12,9,13,4,6,2,4,12,15));
+		
+		// Exercise 5
+//		printOddNumberCubes(List.of(12,9,13,4,6,2,4,12,15));
+		
+		// Exercise 6
+		printCountOfChars(List.of("Spring", "Spring Boot", "API", "Microservices", "AWS", "PCF", "Azure", "Docker", "Kubernates"));
+		
+	
 	}
 
 	private static boolean isEven(int number) {
@@ -58,7 +68,28 @@ public class FP01Functional {
 		.filter(course -> (char)course.length() >= 4)
 		.forEach(System.out::println);			
 	}
+	
 
+	private static void printSquare(List<Integer> numbers) {
+		numbers.stream()
+		.map(number -> number * number)
+		.forEach(System.out::println);		
+	}
+		
+
+	private static void printOddNumberCubes(List<Integer> numbers) {
+		numbers.stream()
+		.filter(number -> number % 2 != 0)
+		.map(number -> number * number * number)
+		.forEach(System.out::println);		
+	}	
+
+	private static void printCountOfChars(List<String> courses) {
+		courses.stream()
+		.map(course -> course.length())
+		.forEach(System.out::println);;
+		
+	}
 
 
 }
